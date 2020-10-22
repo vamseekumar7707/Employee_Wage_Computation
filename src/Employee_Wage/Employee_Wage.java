@@ -6,7 +6,9 @@ public class Employee_Wage {
 		System.out.println("Welcome to Employee Wage Computation Problem");
 
 		int IS_FULL_TIME = 1;
-		int attendance = (int) (Math.round(Math.random()));
+		int IS_PART_TIME = 2;
+		int attendance = (int) (Math.floor(Math.random() * 10) % 3);
+		System.out.println(attendance);
 		int empWagePerHour = 20;
 		int empHrs = 0;
 		int empDailyWage = 0;
@@ -14,12 +16,17 @@ public class Employee_Wage {
 			System.out.println("Employee is present");
 			System.out.println();
 			empHrs = 8;
-		} else
-		{
+		} else if (attendance == IS_PART_TIME) {
+			System.out.println("Employee is present for Part time");
+			System.out.println();
+			empHrs = 4;
+
+		} else {
 			System.out.println("Employee is absent");
-		System.out.println();
+			System.out.println();
 		}
-		empDailyWage=empWagePerHour*empHrs;
-		System.out.println("Employee's salary for the day is "+empDailyWage);
+		empDailyWage = empWagePerHour * empHrs;
+		System.out.println("Employee's salary for the day is " + empDailyWage);
 	}
+
 }
